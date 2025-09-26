@@ -1,0 +1,10 @@
+charset,UTF-8
+type,shell
+
+name,Default
+craftman,the nameless one
+craftmanw,the nameless one
+craftmanurl,
+
+seriko.alignmenttodesktop,free
+seriko.use_self_alpha,1

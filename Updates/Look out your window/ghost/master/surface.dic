@@ -1,0 +1,38 @@
+//Happens about 30 seconds after a script ends, by default, to bring them back to normal poses
+OnSurfaceRestore : all
+{
+	B
+	
+	if visitor == 1; "\i[100]" //test cloud
+	elseif visitor == 2; "\i[300]" //test crow
+	elseif visitor == 3; "\i[101]\i[301]" //test demon
+	elseif visitor == 4; "\i[103]\i[302]" //shadow kid
+	elseif visitor == 5; "\i[104]" //cryptid
+}
+
+//(short for Build (short for Build Window)). handles everything but visitor sprites so you can, uh, change those. lol
+//example: "%(B)\i[315]Hi i am making an expression or whatever"
+B : all 
+{
+	"\1\s[10]\0\s[0]"
+	
+	"\i[200]\i[201]"
+	
+	if open == 1; "\i[203]"
+	else; "\i[202]"
+	
+	if curtain == 1; "\i[400]" //pale
+	
+	if left == 1; "\i[401]" //test box
+	
+	if right == 1; "\i[402]" //test flower
+	elseif right == 2; "\i[404]" //notebook
+	
+	if hanging == 1; "\i[403]" //test pot
+}
+
+//Happens when the ghost is unminimized. You can customize what surfaces are used here/if there's dialogue, but by default I've set it to just go to OnSurfaceRestore
+OnWindowStateRestore
+{
+	OnSurfaceRestore
+}

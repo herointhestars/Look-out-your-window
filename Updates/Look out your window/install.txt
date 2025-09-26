@@ -1,0 +1,5 @@
+charset,UTF-8
+type,ghost
+
+name,Look out your window
+directory,Look out your window

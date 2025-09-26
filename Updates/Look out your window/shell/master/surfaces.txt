@@ -1,0 +1,101 @@
+descript
+{
+	version,1
+}
+
+//image naming:
+//1000-9999: surfaces (base backgrounds)
+//10001-10099: background details
+//10100-10199: visitor behind window
+//10200-10299: window frame
+//10300-10399: visitor behind decorations
+//10400-10499: decorations
+//10500-10599: visitor in front of decorations (if ever necessary)
+
+//surface/animation naming is the same except animations drop the first '10'
+
+//—————————————————————————————— Sakura surfaces ——————————————————————————————
+
+surface0
+{
+	//test visitor: cloud
+	animation100.interval,never
+	animation100.pattern0,overlay,10100,0,0,0
+	
+	//test visitor: demon (back)
+	animation101.interval,never
+	animation101.pattern0,overlay,10101,0,0,0
+	
+	//cloud w/ angry eyebrows
+	animation102.interval,never
+	animation102.pattern0,overlay,10102,0,0,0
+	
+	//shadow child (back)
+	animation103.interval,never
+	animation103.pattern0,overlay,10103,0,0,0
+	
+	//cryptid
+	animation104.interval,never
+	animation104.pattern0,overlay,10104,0,0,0
+	
+	
+	
+	//window frame
+	animation200.interval,never
+	animation200.pattern0,overlay,10200,0,0,0
+	
+	//top pane
+	animation201.interval,never
+	animation201.pattern0,overlay,10201,0,0,0
+	
+	//bottom pane (closed)
+	animation202.interval,never
+	animation202.pattern0,overlay,10202,0,0,0
+	
+	//bottom pane (open)
+	animation203.interval,never
+	animation203.pattern0,overlay,10203,0,0,0
+	
+	
+	
+	//test visitor: crow
+	animation300.interval,never
+	animation300.pattern0,overlay,10300,0,0,0
+	
+	//test visitor: demon (front)
+	animation301.interval,never
+	animation301.pattern0,overlay,10301,0,0,0
+	
+	//shadow child (front)
+	animation302.interval,never
+	animation302.pattern0,overlay,10302,0,0,0
+	
+	
+	
+	//default curtains
+	animation400.interval,never
+	animation400.pattern0,overlay,10400,0,0,0
+	
+	//test deco: box
+	animation401.interval,never
+	animation401.pattern0,overlay,10401,0,0,0
+	
+	//test deco: flower
+	animation402.interval,never
+	animation402.pattern0,overlay,10402,0,0,0
+	
+	//test deco: pot
+	animation403.interval,never
+	animation403.pattern0,overlay,10403,0,0,0
+	
+	//notebook
+	animation404.interval,never
+	animation404.pattern0,overlay,10404,0,0,0
+}
+
+//—————————————————————————————— Kero surfaces ——————————————————————————————
+
+surface10
+{
+
+}

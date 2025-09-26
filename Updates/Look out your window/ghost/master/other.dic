@@ -1,0 +1,70 @@
+OnKeyPress
+{
+	if reference0 == "f1"; "\![open,readme]"
+	elseif reference0 == "t"; OnAiTalk
+	elseif reference0 == "r"; OnLastTalk
+	elseif reference0 == "f12"; OnToggleDevMode
+}
+
+OnToggleDevMode
+{
+	if devmode == 0
+	{
+		devmode = 1
+		"[Dev mode activated!]"
+	}
+	else
+	{
+		devmode = 0
+		if left == 1; left = 0
+		if right == 1; right = 0
+		if hanging == 1; hanging = 0
+		if visitor == 1 || visitor == 2 || visitor == 3; visitor = 0
+		if varrive == 1; varrive = 30
+		if vleave == 1; vleave = 10
+		OnSurfaceRestore
+		--
+		"[Dev mode disabled.]"
+	}
+}
+
+OnTranslate
+{
+	_talk = reference0
+	
+	//This is what makes %(embedded_elements) work in script input
+	if reference1 == "" && reference2 == "" //If this is from the input box
+	{ //send input box : no event (ref2) , no special flag (ref1)
+		_talk = EVAL('"' + REPLACE(_talk,'"','""') + '"')
+	}
+	
+	//If you want to add anything to OnTranslate, like text replacement, I would put it after this point, generally. Just make sure it's before the TOSTR(_talk)
+	
+	TOSTR(_talk)
+}
+
+//This bit of code is what makes menu options that don't start with On direct to Select.options instead
+OnChoiceSelect
+{
+    EVAL("Select.%(reference0)")
+}
+
+//This is just here so you can use anchors to link to websites if you want. You can link to websites with normal menu choice tags! If you do, a handy URL preview will show up in the balloon!
+OnAnchorSelect
+{
+	if "http://" _in_ reference0 || "https://" _in_ reference0; "\j[""%(reference0)""]"
+}
+
+//This just makes %(username) match with the username determined by the SSP prefs, rather than having to use the %username environment variable which is *not* the same and which you can't do things like TOUPPER to.
+//If you want to have the user be able to set a nickname or something, you may want to change username to a variable instead and get rid of this!
+username
+{
+	if SHIORI3FW.UserName == ""
+	{
+		"Opi"
+	}
+	else
+	{
+		SHIORI3FW.UserName
+	}
+}

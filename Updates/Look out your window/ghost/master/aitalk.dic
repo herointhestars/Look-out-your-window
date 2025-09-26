@@ -1,0 +1,67 @@
+OnAiTalk
+{
+	if CHAIN.IDName != ""
+	{
+		LastTalk = ChainTalk
+	}
+	else
+	{
+		LastTalk = RandomTalk
+	}
+	LastTalk
+}
+
+RandomTalk : nonoverlap_pool
+{
+	if visitor == 0
+	{
+		"[The wind is blowing gently.]"
+		"[The sunlight is soft and kind.]"
+		"[You can hear the quiet rustling of the leaves.]"
+		"[Your windchimes are singing.]"
+		"[You take a moment to watch a dragonfly flit about.]"
+		"[The grass sways slowly.]"
+		"[A squirrel scampers up a tree outside.]"
+		"[A bird flaps past your window.]"
+		
+		if open == 1
+		{
+			"[A breeze ruffles your hair.]"
+			"[You catch the scent of earth on the air.]"
+			"[A bee briefly buzzes inside before you shoo it out.]"
+			"[The sweet smell of the flowers floats inside.]"
+		}
+	}
+	
+	//test cloud
+	if visitor == 1; "swoosh shoosh"
+	
+	//test crow
+	if visitor == 2; "[It caws contentedly.]"
+	
+	//test demon
+	if visitor == 3; "I've seen the moon."
+	
+	//shadow kid
+	if visitor == 4
+	{
+		"i like drawing!! but i'm not that good at it yet :(\n\n\[You tell him he'll get better if he keeps drawing.]\n\ncan i use some of your paper then!!"
+		"[He bounces happily on his feet.]"
+		"[He sneezes.]"
+		"what do you like to do when you aren't drawing?"
+		if hour >= 21 || hour <= 4
+		{
+			"[He yawns. You ask him if he wants to go to bed.]\n\nno! i'm having fun!! i wanna stay awake!!\n\n\[...Well, you're not going to make him.]"
+		}
+	}
+	
+	//cryptid
+	if visitor == 5
+	{
+		"[It stares into the distance. It seems peaceful.]"
+		"[It peers curiously at what you're doing.]"
+		"[It closes its eyes for a moment. You wonder what it's thinking about.]"
+		"[A butterfly lands on its nose. Its pupils get very wide as it looks at it.]"
+		"[You offer it a cookie. \w6.\w6.\w6.\w8It seems very happy with this.]"
+	}
+}

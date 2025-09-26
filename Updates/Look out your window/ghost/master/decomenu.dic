@@ -1,0 +1,191 @@
+Select.DecoMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	"\![*]\q[Curtains,CurtainMenu]\n\n"
+	
+	"\![*]\q[Left,LeftMenu]\n\n"
+	
+	"\![*]\q[Right,RightMenu]\n\n"
+	
+	"\![*]\q[Hanging,HangMenu]\n\n\n"
+	
+	"\![*]\q[Remove all,RemoveAll]\n\n"
+	
+	"\![*]\q[Back,OnSakuraMenu]  \![*]\q[Done,blank]"
+}
+
+Select.CurtainMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch curtain == 0
+	{
+		"\![*]\q[Remove,c0]"
+		"\![*]\f[color,disable]Remove\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	switch curtain == 1
+	{
+		"\![*]\q[Pale,c1]"
+		"\![*]\f[color,disable]Pale\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
+}
+
+Select.c0 : all
+{
+	curtain = 0
+	OnSurfaceRestore
+	Select.CurtainMenu
+}
+
+Select.c1 : all
+{
+	curtain = 1
+	OnSurfaceRestore
+	Select.CurtainMenu
+}
+
+Select.LeftMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch left == 0
+	{
+		"\![*]\q[Remove,l0]"
+		"\![*]\f[color,disable]Remove\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	if devmode == 1
+	{
+		switch left == 1
+		{
+			"\![*]\q[Test box,l1]\n\n"
+			"\![*]\f[color,disable]Test box\f[color,default]\n\n"
+		}
+	}
+	
+	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
+}
+
+Select.l0 : all
+{
+	left = 0
+	OnSurfaceRestore
+	Select.LeftMenu
+}
+
+Select.l1 : all
+{
+	left = 1
+	OnSurfaceRestore
+	Select.LeftMenu
+}
+
+Select.RightMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch right == 0
+	{
+		"\![*]\q[Remove,r0]"
+		"\![*]\f[color,disable]Remove\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	if devmode == 1
+	{
+		switch right == 1
+		{
+			"\![*]\q[Test flower,r1]\n\n"
+			"\![*]\f[color,disable]Test flower\f[color,default]\n\n"
+		}
+	}
+	
+	switch right == 2
+	{
+		"\![*]\q[Notebook,r2]"
+		"\![*]\f[color,disable]Notebook\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
+}
+
+Select.r0 : all
+{
+	right = 0
+	OnSurfaceRestore
+	Select.RightMenu
+}
+
+Select.r1 : all
+{
+	right = 1
+	OnSurfaceRestore
+	Select.RightMenu
+}
+
+Select.r2 : all
+{
+	right = 2
+	OnSurfaceRestore
+	Select.RightMenu
+}
+
+Select.HangMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch hanging == 0
+	{
+		"\![*]\q[Remove,h0]"
+		"\![*]\f[color,disable]Remove\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	if devmode == 1
+	{
+		switch hanging == 1
+		{
+			"\![*]\q[Test pot,h1]\n\n"
+			"\![*]\f[color,disable]Test pot\f[color,default]\n\n"
+		}
+	}
+	
+	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
+}
+
+Select.h0 : all
+{
+	hanging = 0
+	OnSurfaceRestore
+	Select.HangMenu
+}
+
+Select.h1 : all
+{
+	hanging = 1
+	OnSurfaceRestore
+	Select.HangMenu
+}
+
+Select.RemoveAll
+{
+	curtain = 0
+	left = 0
+	right = 0
+	hanging = 0
+	OnSurfaceRestore
+}

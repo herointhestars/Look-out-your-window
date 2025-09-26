@@ -1,0 +1,129 @@
+OnVisitorArrive : all
+{
+	while visitor == 0
+	{
+		//checks if the conditions are met for ANY visitor and exits the loop if not
+		if hanging == 1 /*test cloud*/ || left == 1 /*test crow*/  || right == 1 /*test demon*/ || right == 2 /*shadow kid*/ || curtain == 0 && left == 0 && right == 0 && hanging == 0 /*cryptid*/
+		{
+			//continue
+		}
+		else
+		{
+			return
+		}
+		
+		_vchoose = RAND(5)
+		
+		if _vchoose == 0 && hanging == 1; visitor = 1 //test cloud
+		elseif _vchoose == 1 && left == 1; visitor = 2 //test crow
+		elseif _vchoose == 2 && right == 1; visitor = 3 //test demon
+		elseif _vchoose == 3 && right == 2; visitor = 4 //shadow kid
+		elseif _vchoose == 4 && curtain == 0 && left == 0 && right == 0 && hanging == 0; visitor = 5 //cryptid
+	}
+	
+	if visitor != 0
+	{
+		sincevchange = 0
+		LastTalk = ""
+	}
+
+	if visitor == 1
+	{
+		open = 0
+		if t1flag == 0
+		{
+			"%(B)\i[100]woosh whoosh\n\n[...You don't let it in.]"
+			t1flag = 1
+		}
+		else
+		{
+			"%(B)\i[100][It hovers close. You try to ignore it.]"
+		}
+	}
+	elseif visitor == 2
+	{
+		open = 1
+		if t2flag == 0
+		{
+			"%(B)\i[300][A crow lands outside your window. You let it in.]"
+			t2flag = 1
+		}
+		else
+		{
+			"%(B)\i[300][You toss it a peanut as it lands. It caws appreciatively.]"
+		}
+	}
+	elseif visitor == 3
+	{
+		open = 1
+		if t3flag == 0
+		{
+			"%(B)\i[101]\i[301][A terrifying monster approaches. You open the window for a chat.]"
+			t3flag = 1
+		}
+		else
+		{
+			"%(B)\i[101]\i[301][It returns.]"
+		}
+	}
+	elseif visitor == 4
+	{
+		open = 1
+		if skflag == 0
+		{
+			"%(B)\i[103]\i[302]hey! hey! are you drawing something?!? can i see???"
+			skflag = 1
+		}
+		else
+		{
+			"%(B)\i[103]\i[302] hey what are you doing today!!"
+		}
+	}
+	if visitor == 5
+	{
+		if crflag == 0
+		{
+			"%(B)\i[104][A mysterious creature appears. You say hello and introduce yourself. It simply nods politely.]"
+			crflag = 1
+		}
+		else
+		{
+			"%(B)\i[104][The being silently returns.]"
+		}
+	}
+}
+
+OnVisitorLeave
+{
+	if visitor == 1; "[Thankfully, it floats away.]"
+	elseif visitor == 2; "[Seems it has other things to do.]"
+	elseif visitor == 3; "[It silently walks away.]"
+	elseif visitor == 4
+	{
+		"[He runs off after a butterfly.]"
+		"i gotta go! see you later!!"
+	}
+	elseif visitor == 5
+	{
+		"[It waves and takes its leave.]"
+	}
+	--
+	sincevchange = 0
+	visitor = 0
+	OnSurfaceRestore
+	LastTalk = ""
+}
+
+OnVisitorDismiss
+{
+	if visitor == 1; "%(B)\i[102][You shoo it away nervously.]"
+	elseif visitor == 2; "[You gently usher it out.]"
+	elseif visitor == 3; "[It nods its head politely and walks away.]"
+	elseif visitor == 4; "okay! bye!!\n\n[He waves enthusiastically at you before running off.]"
+	elseif visitor == 5; "[It nods and wanders off.]"
+	--
+	sincevchange = 0
+	visitor = 0
+	OnSurfaceRestore
+	LastTalk = ""
+}

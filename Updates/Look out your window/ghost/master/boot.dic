@@ -1,0 +1,43 @@
+OnFirstBoot
+{
+	devmode = 0
+	
+	open = 0
+	curtain = 1
+	left = 0
+	right = 0
+	hanging = 0
+	visitor = 0
+	
+	t1flag = 0
+	t2flag = 0
+	t3flag = 0
+	skflag = 0
+	crflag = 0
+	
+	sincevchange = 0
+	varrive = 30
+	vleave = 10
+	neverarrive = 0
+	neverleave = 0
+	
+	LastTalk = ""
+}
+
+OnInitialize
+{
+	//OnInitialize is a NOTIFY event! That means it cannot return scripts. This event is only meant for things like variable changes. See this page on Ukadoc for more info: https://ukagakadreamteam.github.io/ukadoc/manual/spec_shiori3.html
+	//If you add new variables in updates, I recommend initializing them like so:
+	//if !ISVAR("NewVariable"); NewVariable = 0
+	//This means that it will only set the new variable if the user doesn't already have it, so that their variables don't get overwritten
+}
+
+OnBoot
+{
+	OnSurfaceRestore
+}
+
+OnClose
+{	
+	"\w8\-"
+}

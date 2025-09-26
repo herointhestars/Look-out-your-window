@@ -1,0 +1,17 @@
+charset,UTF-8
+
+name,Look out your window
+type,ghost
+
+shiori,yaya.dll
+
+craftman,the nameless one
+craftmanw,the nameless one
+craftmanurl,
+
+sakura.name,Window
+kero.name,-
+
+icon,icon.ico
+
+sstp.allowunspecifiedsend,0

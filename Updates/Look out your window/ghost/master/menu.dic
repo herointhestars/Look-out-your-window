@@ -1,0 +1,171 @@
+OnMouseDoubleClick
+{
+	OnSakuraMenu
+}
+
+OnSakuraMenu : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch visitor == 0
+	{
+		"\![*]\q[Talk,OnAiTalk]"
+		"\![*]\q[Observe,OnAiTalk]"
+	}
+	
+	"  "
+	
+	switch LastTalk == ""
+	{
+		"\![*]\q[Repeat,LastTalk]"
+		"\![*]\f[color,disable]Repeat\f[color,default]"
+	}
+	
+	"\n\n"
+	
+	if visitor != 0; "\![*]\q[Say goodbye,OnVisitorDismiss]\n\n"
+	
+	switch visitor == 0 || visitor == 5
+	{
+		switch open == 1
+		{
+			"\![*]\f[color,disable]Open window\f[color,default]"
+			"\![*]\f[color,disable]Close window\f[color,default]"
+		}
+		switch open == 1
+		{
+			"\![*]\q[Open window,open]"
+			"\![*]\q[Close window,close]"
+		}
+	}
+	
+	"\n\n"
+	
+	"\![*]\q[Decorations,DecoMenu]"
+	
+	"\n\n\n\n"
+	
+	"\![*]\q[Options,OnOptions]\n\n"
+	
+	"\![*]\q[Done,blank]"	
+}
+
+Select.open
+{
+	open = 1
+	OnSurfaceRestore
+}
+
+Select.close
+{
+	open = 0
+	OnSurfaceRestore
+}
+
+Select.LastTalk
+{
+	LastTalk
+}
+
+OnOptions : all
+{	
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	"\![*]\q[Change dialogue rate,TalkRate]"
+	"\n\n"
+	"\![*]\q[Change visitor rate,OnVisitRate]"
+	
+	"\n\n\n\![*]\q[Back,OnSakuraMenu]  \![*]\q[Done,blank]"
+}
+
+OnVisitRate : all
+{
+	"\b[2]\![set,autoscroll,disable]\_q"
+	
+	switch neverarrive == 1
+	{
+		"Right now, it will take at least %(varrive) minutes for someone to show up.\nChange to:\n\n"
+		"Right now, no one will show up.\nChange to:\n\n"
+	}
+	
+	"\![*]\q[Never,OnNeverArrive]\n"
+	if devmode == 1; "\![*]\q[1 minute,OnVarriveChange,1]\n"
+	"\![*]\q[5 minutes,OnVarriveChange,5]\n"
+	"\![*]\q[10 minutes,OnVarriveChange,10]\n"
+	"\![*]\q[15 minutes,OnVarriveChange,15]\n"
+	"\![*]\q[20 minutes,OnVarriveChange,20]\n"
+	"\![*]\q[30 minutes,OnVarriveChange,30]\n"
+	"\![*]\q[One hour,OnVarriveChange,60]\n"
+	
+	switch neverleave == 1
+	{
+		"\n\nRight now, visitors will stay for at least %(vleave) minutes.\nChange to:\n\n"
+		"\n\nRight now, visitors will stay until you ask them to go.\nChange to:\n\n"
+	}
+	
+	"\![*]\q[Never,OnNeverLeave]\n"
+	if devmode == 1; "\![*]\q[1 minute,OnVleaveChange,1]\n"
+	"\![*]\q[5 minutes,OnVleaveChange,5]\n"
+	"\![*]\q[10 minutes,OnVleaveChange,10]\n"
+	"\![*]\q[15 minutes,OnVleaveChange,15]\n"
+	"\![*]\q[20 minutes,OnVleaveChange,20]\n"
+	"\![*]\q[30 minutes,OnVleaveChange,30]\n"
+	"\![*]\q[One hour,OnVleaveChange,60]\n"
+
+	"\n\n\![*]\q[Back,OnOptions]  \![*]\q[Done,blank]"
+}
+
+Select.TalkRate : all
+{
+	//This is just setting up a label, you may need to add to it or tweak it if you change what rates are available
+	_talkrate = "Off"
+	if aitalkinterval == 30; _talkrate = "30 seconds"
+	elseif aitalkinterval == 60; _talkrate = "1 minute"
+	elseif aitalkinterval == 180; _talkrate = "3 minutes"
+	elseif aitalkinterval == 300; _talkrate = "5 minutes"
+	elseif aitalkinterval == 600; _talkrate = "10 minutes"
+	
+	"\b[2]\![set,autoscroll,disable]\_q"
+	"Current random dialogue frequency:\nEvery %(_talkrate)\n\n"
+	
+	"\![*]\q[Never,OnTalkRateChange,0]\n"
+	"\![*]\q[30 seconds,OnTalkRateChange,30]\n"
+	"\![*]\q[1 minute,OnTalkRateChange,60]\n"
+	"\![*]\q[3 minutes,OnTalkRateChange,180]\n"
+	"\![*]\q[5 minutes,OnTalkRateChange,300]\n"
+	"\![*]\q[10 minutes,OnTalkRateChange,600]\n"
+	"\n"
+	"\![*]\q[Back,OnOptions]  \![*]\q[Done,blank]"
+}
+
+OnVarriveChange
+{
+	varrive = TOINT(reference0)
+	neverarrive = 0
+	OnVisitRate
+}
+
+OnVleaveChange
+{
+	vleave = TOINT(reference0)
+	neverleave = 0
+	OnVisitRate
+}
+
+OnNeverArrive
+{
+	neverarrive = 1
+	OnVisitRate
+}
+
+OnNeverLeave
+{
+	neverleave = 1
+	OnVisitRate
+}
+
+OnTalkRateChange
+{
+	aitalkinterval = TOINT(reference0)
+	OnOptions
+}

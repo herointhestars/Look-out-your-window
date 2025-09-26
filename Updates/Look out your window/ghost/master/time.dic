@@ -1,0 +1,25 @@
+OnMinuteChange : all
+{
+	sincevchange += 1
+	
+	if visitor == 0
+	{
+		if neverarrive == 0
+		{
+			if sincevchange >= varrive
+			{
+				OnVisitorArrive
+			}
+		}
+	}
+	else
+	{
+		if neverleave == 0
+		{
+			if sincevchange >= vleave
+			{
+				OnVisitorLeave
+			}
+		}
+	}
+}
