@@ -24,6 +24,7 @@ B : all
 	if curtain == 1; "\i[400]" //pale
 	
 	if left == 1; "\i[401]" //test box
+	elseif left == 2; "\i[405]" //yellow flowers
 	
 	if right == 1; "\i[402]" //test flower
 	elseif right == 2; "\i[404]" //notebook

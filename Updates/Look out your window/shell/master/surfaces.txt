@@ -91,6 +91,10 @@ surface0
 	//notebook
 	animation404.interval,never
 	animation404.pattern0,overlay,10404,0,0,0
+	
+	//yellow flowers
+	animation405.interval,never
+	animation405.pattern0,overlay,10405,0,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————

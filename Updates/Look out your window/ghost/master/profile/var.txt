@@ -1,0 +1,10 @@
+Charset,UTF-8
+install,803673459
+homeurl_found,1
+surfacecount,19
+homeurl,https://raw.githubusercontent.com/herointhestars/Look-out-your-window/refs/heads/main/Updates/Look%20out%20your%20window/
+update_result,OK(1)
+firstboot,803674747
+update_time,812165961
+commitmemorysize,280347
+lastboot,812203329

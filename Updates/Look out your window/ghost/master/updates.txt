@@ -1,15 +1,15 @@
 charset,OSNative
 file,install.txt03dc8dc67e037e85b5f5eeaee48b8f46size=86date=2025-09-20T10:48:47
 file,readme.txt6c7411c86c353df01ff7b9c475fa6a23size=511date=2025-09-25T06:21:00
-file,ghost/master/aitalk.dic0a8440cb7b1e9b826094ab02a54e52b8size=1796date=2025-09-25T06:42:26
+file,ghost/master/aitalk.dic0a8440cb7b1e9b826094ab02a54e52b8size=1796date=2025-09-25T21:39:21
 file,ghost/master/boot.dic95e71f88c7704231994f6a53add0b046size=869date=2025-09-25T06:27:10
-file,ghost/master/decomenu.dic08a7628b616a22309a85e5f4b6b99e41size=2752date=2025-09-24T14:55:00
+file,ghost/master/decomenu.dic3e96c9b47a0d8a84768577735b46f8desize=2958date=2025-09-26T08:02:04
 file,ghost/master/descript.txt579ff7ad0467593df87c0cea0a497be0size=227date=2025-09-20T10:50:53
 file,ghost/master/emerg.dicc7cb6eacd3262003fef909c382a6fefesize=351date=2023-04-14T15:45:50
 file,ghost/master/menu.dic626337cc9396951e20b07b8921597647size=3645date=2025-09-25T06:33:33
-file,ghost/master/meta.dicc5ab5281c411eeae872bc7cf8136f878size=6346date=2025-09-25T20:49:04
+file,ghost/master/meta.dicc5ab5281c411eeae872bc7cf8136f878size=6346date=2025-09-25T20:48:37
 file,ghost/master/other.dicfbb1d12857d8240ba7a225484d3b220bsize=1985date=2025-09-24T15:24:14
-file,ghost/master/surface.dic8468c9e32c6ed9439beff2d30fc86756size=1084date=2025-09-25T03:17:55
+file,ghost/master/surface.dicb7617ae9501fea2dec5f6d8607ed4a38size=1131date=2025-09-26T08:00:30
 file,ghost/master/time.diceee8c7d9cfa7dc6932485bb9ce8f9235size=281date=2025-09-25T06:26:35
 file,ghost/master/visitors.dic33179e11dc5d2b33844cb4d05d0fed19size=2871date=2025-09-25T05:42:34
 file,ghost/master/yaya.dll7ca71c0691df0379655530fcf6d0fa7csize=884736date=2025-01-15T16:08:02
@@ -40,4 +40,5 @@ file,shell/master/surface10401.png32b2757590b1855dbb97570e8ef18153size=716dat
 file,shell/master/surface10402.pngbbd6db821b49f229a7ec9f9997a00911size=932date=2025-09-21T03:27:41
 file,shell/master/surface10403.png66f1f27a49e300a2c4ca413bd7c4cd79size=1069date=2025-09-21T03:27:52
 file,shell/master/surface10404.pnge932980a2ffad71c6dd81ce2f07f0853size=1232date=2025-09-24T14:51:48
-file,shell/master/surfaces.txt1e525a289181793af5a3ffb0ec26cdebsize=2546date=2025-09-25T01:58:09
+file,shell/master/surface10405.pnge8870101e51bfcd9575d029c404d80a7size=1850date=2025-09-26T08:01:04
+file,shell/master/surfaces.txtd3dfc11da17fdf051c29ff37c08ede75size=2642date=2025-09-26T07:58:20

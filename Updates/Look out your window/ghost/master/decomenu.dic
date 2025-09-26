@@ -73,6 +73,14 @@ Select.LeftMenu : all
 		}
 	}
 	
+	switch left == 2
+	{
+		"\![*]\q[Yellow flowers,l2]"
+		"\![*]\f[color,disable]Yellow flowers\f[color,default]"
+	}
+	
+	"\n\n"
+	
 	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
 }
 
@@ -86,6 +94,13 @@ Select.l0 : all
 Select.l1 : all
 {
 	left = 1
+	OnSurfaceRestore
+	Select.LeftMenu
+}
+
+Select.l2 : all
+{
+	left = 2
 	OnSurfaceRestore
 	Select.LeftMenu
 }
