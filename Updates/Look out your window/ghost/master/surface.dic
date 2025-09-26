@@ -30,6 +30,7 @@ B : all
 	elseif right == 2; "\i[404]" //notebook
 	
 	if hanging == 1; "\i[403]" //test pot
+	elseif hanging ==2; "\i[406]" //silver lantern
 }
 
 //Happens when the ghost is unminimized. You can customize what surfaces are used here/if there's dialogue, but by default I've set it to just go to OnSurfaceRestore

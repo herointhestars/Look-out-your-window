@@ -179,6 +179,14 @@ Select.HangMenu : all
 		}
 	}
 	
+	switch hanging == 2
+	{
+		"\![*]\q[Silver lantern,h2]"
+		"\![*]\f[color,disable]Silver lantern\f[color,default]"
+	}
+	
+	"\n\n"
+	
 	"\n\![*]\q[Back,DecoMenu]  \![*]\q[Done,blank]"
 }
 
@@ -192,6 +200,13 @@ Select.h0 : all
 Select.h1 : all
 {
 	hanging = 1
+	OnSurfaceRestore
+	Select.HangMenu
+}
+
+Select.h2 : all
+{
+	hanging = 2
 	OnSurfaceRestore
 	Select.HangMenu
 }

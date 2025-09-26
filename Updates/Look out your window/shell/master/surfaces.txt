@@ -95,6 +95,10 @@ surface0
 	//yellow flowers
 	animation405.interval,never
 	animation405.pattern0,overlay,10405,0,0,0
+	
+	//silver lantern
+	animation406.interval,never
+	animation406.pattern0,overlay,10406,0,0,0
 }
 
 //—————————————————————————————— Kero surfaces ——————————————————————————————
