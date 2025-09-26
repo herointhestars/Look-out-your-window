@@ -7,7 +7,7 @@ shiori,yaya.dll
 
 craftman,the nameless one
 craftmanw,the nameless one
-craftmanurl,
+craftmanurl,https://the-nameless-one-does-art.tumblr.com/
 
 sakura.name,Window
 kero.name,-
