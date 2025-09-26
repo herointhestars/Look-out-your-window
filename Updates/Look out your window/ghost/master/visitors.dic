@@ -33,6 +33,7 @@ OnVisitorArrive : all
 		if t1flag == 0
 		{
 			"%(B)\i[100]woosh whoosh\n\n[...You don't let it in.]"
+			--
 			t1flag = 1
 		}
 		else
@@ -46,6 +47,7 @@ OnVisitorArrive : all
 		if t2flag == 0
 		{
 			"%(B)\i[300][A crow lands outside your window. You let it in.]"
+			--
 			t2flag = 1
 		}
 		else
@@ -59,6 +61,7 @@ OnVisitorArrive : all
 		if t3flag == 0
 		{
 			"%(B)\i[101]\i[301][A terrifying monster approaches. You open the window for a chat.]"
+			--
 			t3flag = 1
 		}
 		else
@@ -72,6 +75,7 @@ OnVisitorArrive : all
 		if skflag == 0
 		{
 			"%(B)\i[103]\i[302]hey! hey! are you drawing something?!? can i see???"
+			--
 			skflag = 1
 		}
 		else
@@ -84,6 +88,7 @@ OnVisitorArrive : all
 		if crflag == 0
 		{
 			"%(B)\i[104][A mysterious creature appears. You say hello and introduce yourself. It simply nods politely.]"
+			--
 			crflag = 1
 		}
 		else
