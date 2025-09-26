@@ -61,7 +61,7 @@ OnHeadlinesenseFailure
 	"[Could not get RSS: %(_reason).]"
 }
 
-//Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update! If you don't plan to use network updates you can remove this
+//Network update url. Make sure you have a / on the end of the url or it will give a warning every time users try to update!
 //IF YOU'RE USING GITHUB FOR NETWORK UPDATES: DO NOT USE github.io URLS! It will cause you pain and suffering. USE raw.githubusercontent!!!
 //To get the raw.githubusercontent link super easy:
 //• Open your ghost's repo online
@@ -72,7 +72,7 @@ OnHeadlinesenseFailure
 //Tada! That's your url! Make sure you test it! The dev palette and script/network log can help with that
 On_homeurl
 {
-	""
+	"https://raw.githubusercontent.com/herointhestars/Look-out-your-window/refs/heads/main/Updates/Look%20out%20your%20window/"
 }
 
 
